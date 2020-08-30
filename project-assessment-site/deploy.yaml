@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-assessment-site-service
+  labels:
+    app: project-assessment-site-service
+    type: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-assessment-site-service
+  template:
+    metadata:
+      labels:
+        app: project-assessment-site-service
+    spec:
+      containers:
+      - name: project-assessment-site-service
+        image: rayanah/project-assessment-site-service
+        ports:
+        - containerPort: 80
