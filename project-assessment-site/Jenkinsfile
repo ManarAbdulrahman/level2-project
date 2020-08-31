@@ -32,8 +32,8 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('rayanah_docker_tocker')
-    DOCKER_NAMESPACE = 'rayanah'
+    CREDS = credentials('phi_docker_tocker')
+    DOCKER_NAMESPACE = 'phi'
     SERVICE_NAME = 'project-assessment-site-service'
     TOKEN=credentials('d58561be-2b17-44b4-b0de-d0f2e1c2a75b')
   }
