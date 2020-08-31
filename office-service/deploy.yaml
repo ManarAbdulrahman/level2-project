@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: office-service
-        image: rayanah/office-service
+        image: phidoblevel2/office-service
         ports:
         - containerPort: 80

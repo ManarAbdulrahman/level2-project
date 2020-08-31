@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: role-service
-        image: rayanah/role-service
+        image: phidoblevel2/role-service
         ports:
         - containerPort: 80
