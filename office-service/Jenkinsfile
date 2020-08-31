@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('phi_docker_tocker')
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'office-service'
-    TOKEN=credentials('e70f4d3b-876c-480f-9f23-e0045e5c53eb')//k8 token
+    TOKEN=credentials('f4c0350c-736c-4130-8ed4-f899ed352494')//k8 token
   }
   stages {
       stage("Build") {
