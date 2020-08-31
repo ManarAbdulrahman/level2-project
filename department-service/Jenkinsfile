@@ -32,7 +32,7 @@ spec:
     }
   }
   environment {
-    CREDS = credentials('phi_docker_creds')//dockerhup
+    CREDS = credentials('phi_docker_tocker')//dockerhup
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'department-service'
     TOKEN=credentials('d58561be-2b17-44b4-b0de-d0f2e1c2a75b')//k8 token
