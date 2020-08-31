@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('phi_docker_tocker')
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'person-service'
-    TOKEN=credentials('d58561be-2b17-44b4-b0de-d0f2e1c2a75b')
+    TOKEN=credentials('e70f4d3b-876c-480f-9f23-e0045e5c53eb')
   }
   stages {
       stage("Build") {

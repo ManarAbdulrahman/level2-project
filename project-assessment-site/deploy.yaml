@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: project-assessment-site-service
-        image: rayanah/project-assessment-site-service
+        image: phidoblevel2/project-assessment-site-service
         ports:
         - containerPort: 80
