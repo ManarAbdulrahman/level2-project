@@ -21,7 +21,7 @@ spec:
       stage("create namespace") {
           steps {
               container('installer') {
-                 // sh 'kubectl create namespace project2'
+                  sh 'kubectl create namespace project2'
               }
           }
       }
