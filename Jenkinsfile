@@ -30,10 +30,10 @@ spec:
               container('installer') {
               
               parallel(
-               a:{build job: 'web-service-pipeline'} 
-               b:{build job: 'role-service-pipeline'} 
-               c:{build job: 'person-service-pipeline'}
-               d:{build job: 'office-service-pipeline'}
+               a:{build job: 'web-service-pipeline'}, 
+               b:{build job: 'role-service-pipeline'},
+               c:{build job: 'person-service-pipeline'},
+               d:{build job: 'office-service-pipeline'},
                e:{build job: 'department-service-pipeline'}             
               )
              
