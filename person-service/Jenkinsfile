@@ -39,7 +39,8 @@ spec:
   }
   stages {
       stage("Build") {
-          steps {
+         when { changeset "**/person-service/**" } 
+         steps {
               container('dnd') {
                   sh '''
                       cd $SERVICE_NAME
@@ -49,6 +50,7 @@ spec:
           }
       }
       stage("Release") {
+          when { changeset "**/person-service/**" } 
           steps {
               container('dnd') {
                   sh '''
@@ -59,6 +61,7 @@ spec:
           }
       }
       stage("Deploy") {
+          when { changeset "**/person-service/**" } 
           steps {
               container('kubectl') {
                   sh '''

@@ -38,10 +38,8 @@ spec:
     TOKEN=credentials('b507bf01-6883-4427-96f0-b8968858c024')//k8 token
   }
   stages {
-      String projectDirectory = "$SERVICE_NAME"
-      String changesetPathRegex = "**/${projectDirectory}/**"
       stage("Build") {
-          when { changeset changesetPathRegex }
+          when { changeset "**/office-service/**" }
           steps {
               container('dnd') {
                   sh '''
@@ -52,7 +50,7 @@ spec:
           }
       }
       stage("Release") {
-          when { changeset changesetPathRegex }
+          when { changeset "**/office-service/**" }
           steps {
               container('dnd') {
                   sh '''
@@ -63,7 +61,7 @@ spec:
           }
       }
       stage("Deploy") {
-          when { changeset changesetPathRegex }
+          when { changeset "**/office-service/**" }
           steps {
               container('kubectl') {
                   sh '''
