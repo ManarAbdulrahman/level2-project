@@ -29,11 +29,11 @@ spec:
           steps {
               container('installer') {
               
-              	build job: 'web-service-pipeline/master', wait: false
-		build job: 'role-service-pipeline/master', wait: false
-		build job: 'person-service-pipeline/master', wait: false
-		build job: 'office-service-pipeline/master', wait: false
-		build job: 'department-service-pipeline/master', wait: false
+              	build job: 'web-service-pipeline'
+		build job: 'role-service-pipeline'
+		build job: 'person-service-pipeline'
+		build job: 'office-service-pipeline'
+		build job: 'department-service-pipeline'
 
               }
           }
