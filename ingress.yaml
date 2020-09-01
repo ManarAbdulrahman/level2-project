@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: webapp
-  namespace: jenkins
+  namespace: project2
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
@@ -13,7 +13,7 @@ spec:
         backend:
           serviceName: office-service
           servicePort: 80
-      - path: /web
+      - path: /
         backend:
           serviceName: project-assessment-site-service
           servicePort: 80
