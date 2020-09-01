@@ -21,24 +21,46 @@ spec:
       stage("create namespace") {
           steps {
               container('installer') {
-                  sh 'kubectl create namespace project2'
+                 // sh 'kubectl create namespace project2'
               }
           }
       }
       stage("apply") {
           steps {
-              container('installer') {
-              
               parallel(
-               a:{build job: 'web-service-pipeline'}, 
-               b:{build job: 'role-service-pipeline'},
-               c:{build job: 'person-service-pipeline'},
-               d:{build job: 'office-service-pipeline'},
-               e:{build job: 'department-service-pipeline'}             
+               a:{
+                 container('installer') {
+               build job: 'web-service-pipeline'
+                 }
+               }
+               ,
+               b:{
+                 container('installer') {
+               build job: 'role-service-pipeline'
+                 }
+               }
+                ,
+               c:{
+                 container('installer') {
+               build job: 'person-service-pipeline'
+                 }
+               }
+               ,
+               d:{  
+               container('installer') {
+               build job: 'office-service-pipeline'
+                 }
+               }
+               ,
+               e:{   
+               container('installer') {
+               build job: 'department-service-pipeline'
+                 }
+               }             
               )
              
 
-              }
+            
           }
       }
       stage("ingress") {
