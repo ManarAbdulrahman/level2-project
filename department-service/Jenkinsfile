@@ -35,12 +35,16 @@ spec:
     CREDS = credentials('phi_docker_tocker')//dockerhup
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'department-service'
-    String TOKEN_ID=credentials('kube_token')//k8 token
-    TOKEN=credentials("${TOKEN_ID}")
-    //TOKEN=credentials('b507bf01-6883-4427-96f0-b8968858c024')//k8 token
+    //TOKEN_ID=credentials('kube_token')//k8 token
+    //TOKEN=credentials("${TOKEN_ID}")
+    TOKEN=credentials('b507bf01-6883-4427-96f0-b8968858c024')//k8 token
   }
+
+  String projectDirectory = "$SERVICE_NAME"
+  String changesetPathRegex = "**/${projectDirectory}/**"
   stages {
       stage("Build") {
+          when { changeset changesetPathRegex }
           steps {
               container('dnd') {
                   sh '''
@@ -51,6 +55,7 @@ spec:
           }
       }
       stage("Release") {
+          when { changeset changesetPathRegex }
           steps {
               container('dnd') {
                   sh '''
@@ -61,6 +66,7 @@ spec:
           }
       }
       stage("Deploy") {
+          when { changeset changesetPathRegex }
           steps {
               container('kubectl') {
                   sh '''
