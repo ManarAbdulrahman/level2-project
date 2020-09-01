@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('phi_docker_tocker')
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'project-assessment-site-service'
-    TOKEN=credentials('f4c0350c-736c-4130-8ed4-f899ed352494')
+    TOKEN=credentials('b507bf01-6883-4427-96f0-b8968858c024')
   }
   stages {
       stage("Build") {
@@ -63,7 +63,7 @@ spec:
               container('kubectl') {
                   sh '''
                       cd project-assessment-site
-                      kubectl --token=$TOKEN -n jenkins apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n project2 apply -f deploy.yaml -f service.yaml
                   '''
               }
           }
