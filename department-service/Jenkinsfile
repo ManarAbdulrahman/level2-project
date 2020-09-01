@@ -35,7 +35,9 @@ spec:
     CREDS = credentials('phi_docker_tocker')//dockerhup
     DOCKER_NAMESPACE = 'phidoblevel2'
     SERVICE_NAME = 'department-service'
-    TOKEN=credentials('f4c0350c-736c-4130-8ed4-f899ed352494')//k8 token
+    String TOKEN_ID=credentials('kube_id')//k8 token
+    TOKEN=credentials(TOKEN_ID)
+    
   }
   stages {
       stage("Build") {
